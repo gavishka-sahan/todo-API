@@ -38,6 +38,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u gavishka-sahan --password-stdin
             docker pull ghcr.io/gavishka-sahan/todo-api:latest
             docker stop todo-api || true
             docker rm todo-api || true
