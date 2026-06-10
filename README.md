@@ -1,4 +1,4 @@
-# Todo API — CI/CD Pipeline Project
+# Todo API, CI/CD Pipeline Project
 
 A Python FastAPI Todo REST API with a full end-to-end CI/CD pipeline using GitHub Actions, Docker, and GitHub Container Registry.
 
@@ -20,17 +20,15 @@ A Python FastAPI Todo REST API with a full end-to-end CI/CD pipeline using GitHu
 ## Pipeline Architecture
 
 ```
-git push
-    │
-    ▼
-GitHub Actions
-    ├── Run tests (pytest)
-    ├── Build Docker image
-    ├── Push to ghcr.io
-    └── SSH into VPS
-            ├── Pull latest image
-            ├── Stop old container
-            └── Run new container
+git push 
+    GitHub Actions
+        Run tests (pytest)
+        Build Docker image
+        Push to ghcr.io
+        SSH into VPS
+            Pull latest image
+            Stop old container
+            Run new container
 ```
 
 Every push to `main` automatically tests, builds, and deploys the app.
@@ -115,13 +113,14 @@ curl -X DELETE http://localhost:8000/todos/{id}
 
 ```
 todo-API/
-├── main.py               # FastAPI application
-├── test_main.py          # pytest test suite
-├── Dockerfile            # Container definition
-├── requirements.txt      # Python dependencies
-└── .github/
-    └── workflows/
-        └── ci.yml        # GitHub Actions pipeline
+    main.py               # FastAPI application
+    test_main.py          # pytest test suite
+    Dockerfile            # Container definition
+    requirements.txt      # Python dependencies
+    .github/
+        workflows/
+            ci.yml        # GitHub Actions pipeline
+
 ```
 
 ---
