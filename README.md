@@ -126,7 +126,7 @@ todo-API/
 
 ---
 
-## What I Learned
+## What Learned
 
 - Building REST APIs with FastAPI and Pydantic
 - Writing automated tests with pytest and httpx
